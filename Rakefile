@@ -2,7 +2,11 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+
+# Had a "uninitialized constant Rake::DSL in Ruby Gem" problem.
+# Googled and added the following line. It worked.
 require 'rake/dsl_definition'
+
 require 'rake'
 
 DemoApp::Application.load_tasks
